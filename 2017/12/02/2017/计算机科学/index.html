@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="计算机科学">
+<meta name="keywords" content="Computer Science">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机科学">
+<meta property="og:url" content="https://bianwangui.github.io/2017/12/02/2017/计算机科学/index.html">
+<meta property="og:site_name" content="万少侠写字的地方">
+<meta property="og:description" content="计算机科学">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/%E4%BA%8C%E7%BA%A7%E5%88%B6%E8%A1%A8%E7%A4%BA.png">
+<meta property="og:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/0.png">
+<meta property="og:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/255.png">
+<meta property="og:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA%E6%B5%AE%E7%82%B9%E6%95%B0.png">
+<meta property="og:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/intel%204004%20architecture.png">
+<meta property="og:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/1.png">
+<meta property="og:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/2.png">
+<meta property="og:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/3.png">
+<meta property="og:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/4.png">
+<meta property="og:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/5.png">
+<meta property="og:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/6.png">
+<meta property="og:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/7.png">
+<meta property="og:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/%E5%85%83%E6%95%B0%E6%8D%AE.png">
+<meta property="og:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/%E9%9F%B3%E9%A2%91%E6%96%87%E4%BB%B6%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F.png">
+<meta property="og:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/%E5%9B%BE%E7%89%87%E5%85%83%E6%95%B0%E6%8D%AE.png">
+<meta property="og:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/%E5%9B%BE%E5%83%8F%E6%95%B0%E6%8D%AE1.png">
+<meta property="og:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/%E6%96%87%E4%BB%B6%E8%BF%9E%E7%BB%AD%E5%AD%98%E5%82%A8.png">
+<meta property="og:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/%E7%9B%AE%E5%BD%95%E6%96%87%E4%BB%B6.png">
+<meta property="og:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/%E7%9B%AE%E5%BD%95%E6%96%87%E4%BB%B61.png">
+<meta property="og:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/%E5%A4%9A%E6%96%87%E4%BB%B6.png">
+<meta property="og:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/%E6%96%87%E4%BB%B6%E5%9D%97.png">
+<meta property="og:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/%E9%A2%84%E7%95%99%E7%A9%BA%E9%97%B4.png">
+<meta property="og:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/%E5%BF%AB%E5%88%86%E9%85%8D.png">
+<meta property="og:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/%E7%A2%8E%E7%89%87%E6%95%B4%E7%90%86.png">
+<meta property="og:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/%E5%88%86%E5%B1%82%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F.png">
+<meta property="og:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/m1.png">
+<meta property="og:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/m2.png">
+<meta property="og:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/m3.png">
+<meta property="og:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/m4.png">
+<meta property="og:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/m5.png">
+<meta property="og:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/m6.png">
+<meta property="og:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/m7.png">
+<meta property="og:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/m8.png">
+<meta property="og:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/m9.png">
+<meta property="og:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/m10.png">
+<meta property="og:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/m11.png">
+<meta property="og:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/m12.png">
+<meta property="og:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/m13.png">
+<meta property="og:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/m14.png">
+<meta property="og:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/m15.png">
+<meta property="og:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/m16.png">
+<meta property="og:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/m17.png">
+<meta property="og:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/m18.png">
+<meta property="og:updated_time" content="2020-09-26T01:52:56.573Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="计算机科学">
+<meta name="twitter:description" content="计算机科学">
+<meta name="twitter:image" content="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/%E4%BA%8C%E7%BA%A7%E5%88%B6%E8%A1%A8%E7%A4%BA.png">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>计算机科学</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">Etiqueta</a></li>
+        
+      </ul>
+    </span>
+    <br>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2018/05/06/2018/不会自动化的代码不是好程序员/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2017/09/21/2017/Let's Rock/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://bianwangui.github.io/2017/12/02/2017/计算机科学/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://bianwangui.github.io/2017/12/02/2017/计算机科学/&text=计算机科学"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://bianwangui.github.io/2017/12/02/2017/计算机科学/&title=计算机科学"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://bianwangui.github.io/2017/12/02/2017/计算机科学/&is_video=false&description=计算机科学"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=计算机科学&body=Check out this article: https://bianwangui.github.io/2017/12/02/2017/计算机科学/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://bianwangui.github.io/2017/12/02/2017/计算机科学/&title=计算机科学"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://bianwangui.github.io/2017/12/02/2017/计算机科学/&title=计算机科学"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://bianwangui.github.io/2017/12/02/2017/计算机科学/&title=计算机科学"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://bianwangui.github.io/2017/12/02/2017/计算机科学/&title=计算机科学"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://bianwangui.github.io/2017/12/02/2017/计算机科学/&name=计算机科学&description=&lt;blockquote&gt;
+&lt;p&gt;计算机科学&lt;/p&gt;
+&lt;/blockquote&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://bianwangui.github.io/2017/12/02/2017/计算机科学/&t=计算机科学"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#How-Computers-Work"><span class="toc-number">1.</span> <span class="toc-text">How Computers Work</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#早期计算设备"><span class="toc-number">1.1.</span> <span class="toc-text">早期计算设备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#布尔逻辑与二进制"><span class="toc-number">1.2.</span> <span class="toc-text">布尔逻辑与二进制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#计算机的计算原理"><span class="toc-number">1.3.</span> <span class="toc-text">计算机的计算原理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Programable-Computer"><span class="toc-number">2.</span> <span class="toc-text">Programable Computer</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#早期编程形式"><span class="toc-number">2.1.</span> <span class="toc-text">早期编程形式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编程语言"><span class="toc-number">2.2.</span> <span class="toc-text">编程语言</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Software-Engineering"><span class="toc-number">3.</span> <span class="toc-text">Software Engineering</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#外部设备"><span class="toc-number">3.1.</span> <span class="toc-text">外部设备</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#存储器（Storage）"><span class="toc-number">3.1.1.</span> <span class="toc-text">存储器（Storage）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件和文件系统"><span class="toc-number">3.1.2.</span> <span class="toc-text">文件和文件系统</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Networks"><span class="toc-number">4.</span> <span class="toc-text">Networks</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#局域网（LAN）【物理层】"><span class="toc-number">4.1.</span> <span class="toc-text">局域网（LAN）【物理层】</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Cybersecurity"><span class="toc-number">5.</span> <span class="toc-text">Cybersecurity</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        计算机科学
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <span itemprop="name">万少侠写字的地方</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2017-12-01T16:00:00.000Z" itemprop="datePublished">2017-12-02</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/Computer/">Computer</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/Computer-Science/">Computer Science</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <blockquote>
+<p>计算机科学</p>
+</blockquote>
+<a id="more"></a>
+<h1 id="How-Computers-Work"><a href="#How-Computers-Work" class="headerlink" title="How Computers Work"></a>How Computers Work</h1><blockquote>
+<p>With billions of transistors in just smartphones, computers can seem pretty complicated, but really they’re just simple machines that perform complex actions through many layers of abstractions.</p>
+</blockquote>
+<h2 id="早期计算设备"><a href="#早期计算设备" class="headerlink" title="早期计算设备"></a>早期计算设备</h2><p><strong>算盘</strong>是通过手动操作实现加减数字和存储计算状态。算盘的发明是由于社会规模的扩大，仅通过大脑难以完成数据量巨大的计算任务。</p>
+<p><strong>计步器</strong>第一次可以实现加减法，也可以通过加减法实现乘除法运算。影响了后来三个世纪的计算器的设计，但大多数实际问题需要多步计算，机械计算器有时可能要花几小时和几天才能得到一个结果。而且计算设备制作昂贵难以普及。计算好的数据表成为一个折中的解决方案。</p>
+<p><strong>分析机</strong>是一个通用自动式计算机，可以用来处理很多任务，不仅仅是某种特定的计算。自动式计算机的概念成为计算机程序的雏形。</p>
+<p><strong>制表机</strong>（IBM）是机电一体化的，由电能驱动部件，通过传统的机械系统保存数据。该机器为当时的人口普查数据处理节省了10年的耗时和大量经费。自此商业领域的人们开始意识到计算能力的价值。</p>
+<p>生产力的发展和数据量的激增不断地对数据处理方式和数据处理工具提出更高的算力需求，成为计算机迭代更新的动力。早期机电计算机运算的实现依靠<strong>继电器</strong>控制电路的通断，而继电器切换速度和机械磨损直接限制了运算的效率。<strong>真空管</strong>没有活动部件，和继电器相比也更加稳定耐用且控制电流通断的速度更快。<strong>晶体管</strong>的出现真正带来了计算性能的突破。</p>
+<h2 id="布尔逻辑与二进制"><a href="#布尔逻辑与二进制" class="headerlink" title="布尔逻辑与二进制"></a>布尔逻辑与二进制</h2><p><strong>逻辑门</strong>是计算机的基础元件，通过它可以完成逻辑运算（也称布尔运算）。在计算机内，有电流通过的“开”的状态表示为“真”，没有电流通过的“关”的状态表示为假。晶体管不仅可以控制电路的通断，还可以控制电流的大小，可以表示多种状态。所以，早期的电子计算机有三进制甚至五进制的，但问题是中间等级越多,就越难区分，在受到外部干扰时也不够稳定，尤其是在晶体管高频率切换状态的时候，情况会变得更糟。所以用两种差别尽可能大的两种状态提高了信号的容错率。其次，在数学上有了布尔代数的支撑。<br>逻辑门是在集成电路上的基本组件。简单的逻辑闸可由晶体管组成。这些晶体管的组合可以使代表两种信号的高低电平在通过它们之后产生高电平或者低电平的信号。高、低电平可以分别代表逻辑上的“真”与“假”或二进制当中的1和0，从而实现逻辑运算。</p>
+<blockquote>
+<p>有了非门，与门，或门我们就不用再考虑晶体管的构成，可以向上到达高一级的抽象层。这样的表示和思考，我们就可以拼凑出更大的组件，同时忽略掉那些复杂的具体实现，只需要知道它们就表示那些杂乱无章的晶体管。当计算机工程师在设计处理器时，他们很少在晶体管层面考虑，而是考虑更大的模块比如逻辑门或者那些更大的由门电路构成的组件。我们也不用去考虑原始的电信号，而是关心如何用它来表示数据。</p>
+</blockquote>
+<p>计算机如何存储和表示数值？单个二进制可以用来表示数字0,1。表示更大的数值只需要加入更多的二进制位这和十进制的处理方式是一样的。在十进制中，只存在 0-9 十个数值，要表示比 9 更大的数字，只需要在数字前加入十进制位。十进制的位权是10，而二进制的位权是2。</p>
+<div><img src="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/%E4%BA%8C%E7%BA%A7%E5%88%B6%E8%A1%A8%E7%A4%BA.png" width="60%"></div>
+
+<p>二进制中的每一位称为比特(bit)。8 比特可以表示0-255。(32位计算机是以32位为一个整体进行运算的计算机)  </p>
+<div><img src="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/0.png" width="60%"></div>
+
+<div><img src="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/255.png" width="60%"></div>
+
+<p>一个字节(byte)是8个比特(bit)。常用千字节(KB)kilobytes, 兆字节(MB)megabytes, 千兆字节(GB)gigabytes, 吉字节(TB)terabyte 表示不同的数据规模。</p>
+<p><strong>正负数的二进制表示</strong>：第一位二进制位表示正负。 1表示负, 0表示正, 其余的位表示绝对值。<br><strong>浮点数的二进制表示</strong>：”IEEE754标准”将浮点数分为指数和尾数. 如32位二进制位中,第一位存储正负,接下来的八位存储指数,其余的23位存储尾数。</p>
+<div><img src="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA%E6%B5%AE%E7%82%B9%E6%95%B0.png" width="60%"></div>
+
+<p><strong>文本的二进制表示</strong>：计算机没有特殊的形式来直接存储字母，而是通过数值表示字母，通过给字母表编号实现(ASCII)。起初，ASCII是一个7位的编码, 可以存储128个不同的值，可以表示大小写字母,数字，标点符号等。不久后采用之前未用的128到255的数值表示国际符号。但ACSII只能表示拉丁字母，其他语系字符在解码时就只能是乱码了。Unicode是一个包含了所有字符的编码方式，解决了各国编码不统一的问题.最常见的字符集是16位，可容纳超过一百万个编码。</p>
+<p><strong>其他文件格式的二进制表示</strong>：其他文件格式如mp3,gif等,是通过二进制数来编码音乐的声音,图片视频的像素色彩，在底层它们都是长串的01序列。</p>
+<h2 id="计算机的计算原理"><a href="#计算机的计算原理" class="headerlink" title="计算机的计算原理"></a>计算机的计算原理</h2><p><strong>ALU</strong>表示和存储数值是电脑的重要功能,但最终目的是为了计算。这些运算是由计算机的算术逻辑单元(ALU)来完成的。算术逻辑单元 (Arithmetic Logic Unit, ALU)是中央处理器(CPU)的执行单元，是所有中央处理器的核心组成部分，由”And Gate” 和”Or Gate”构成的算术逻辑单元，主要功能是进行二进制的算术运算，如加减乘(不包括整数除法)。一个算术逻辑单元包括两部分:算术单元,逻辑单元。</p>
+<p><strong>算术单元</strong>负责计算机内所有数值运算。比如加减法,同时也负责处理一些其他简单的任务。ALU的算术单元的运算电路: 相加, 进位加, 相减, 借位减, 求反, 自增, 自减, 移位。(一般没有乘除,乘除是通过反复执行加法来实现的)</p>
+<p><strong>加法运算</strong>是计算机最核心最基础的运算,支撑起了计算机的其他功能。<strong>溢出</strong>通常指计算结果超过位数所能表示的最大值,溢出通常伴随着错误和未知操作。</p>
+<p><strong>逻辑单元</strong>执行逻辑运算,比如与运算,或运算,非运算等。</p>
+<p><strong>寄存器和内存(RAM)</strong>计算机寄存器是通过逻辑电路实现存储0和1开始的。锁存器是最基本的存储单元，将锁存器以矩阵的行列形式组织起来通过多路器实现数据存储。每个锁存器在矩阵中的位置（地址）用二进制行列数表示。以这种方式组成的存储器（RAM）可以开任意时刻，任意顺序，访问存储器的任意位置。</p>
+<p> <strong>CPU与CPU的功能区</strong>（微体系结构）CPU的工作是执行程序。程序是由一系列单独的操作（指令）组成，指挥计算机该做什么。如果是算术指令如加减法，CPU会配置ALU去执行运算。如果是存储指令，CPU会与存储器沟通来读取和存储数据。 </p>
+<div><img src="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/intel%204004%20architecture.png" width="60%"></div>
+
+
+<p><strong>CPU实现简单加法程序的过程</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">计算机启动，寄存器全部初始化为零第一条指令：</span><br><span class="line">fetch phase</span><br><span class="line">根据指令地址寄存器存储的值连接RAM中对应地址RAM返回该地址存储的数据到指令寄存器（指令和数据被存储在同一内存中，本质上没有不同，都是二进制数字）</span><br><span class="line">decode phase</span><br><span class="line">判断从内存中获得的指令，指令由操作码和操作数地址构成，操作码对应着不同的指令。指令由控制单元译码和解释</span><br><span class="line">execute phase</span><br><span class="line">执行指令操作，将第一个数从RAM中加载到指定寄存器指令地址寄存器值加一，获取第二条指令第二条指令：...</span><br></pre></td></tr></table></figure></p>
+<p><strong>时钟</strong>是用来实现CPU的持续响应，时钟以精确和一定规律的时间间隔来触发电信号，其信号被控制单元用来驱动CPU的内部操作，让一切都井然有序地进行。CPU完成每一个fetch－decode－execute的速度叫<strong>时钟速度</strong>。时钟速度可以根据不同使用场景在一定范围内变化称为动态频率调整。</p>
+<p>CPU强大的原因在于它是可编程的，输入不同的指令序列，CPU会执行不同任务。CPU是硬件的一部分，它被易修改的软件所控制。</p>
+<p><strong>CPU性能提升</strong>计算机从能够每秒计算一次的机械设备发展到以赫兹和兆赫兹速度运行的CPU走过了漫长的路。在电子计算早期，处理器通常提高芯片内部的晶体管切换时间（所有逻辑门的切换时间），ALU 等其他元件来提升速度。但单纯提高晶体管的速度和效率是远远不够的，因此处理器设计人员开发了各种技术来提升性能，不仅简单指令运行速度快而且可以执行更复杂的操作。例如通过连续进行多次减法实现的除法运算可以在ALU上直接配置除法电路，在硬件层执行。用复杂的结构设计来提升速度。高时钟速度对获取和输出CPU的数据有了更高的要求。RAM的读写延迟成了影响效率的瓶颈。</p>
+<p><strong>缓存</strong>RAM输出数据需要自行耗时查找地址，检索数据。要完成一个“RAM加载”指令可能要几十个时钟周期。这段时间处理器在等数据，什么都不做。要解决这个问题可以在CPU上额外配置一个RAM（缓存）。当CPU向RAM请求存储位置时，RAM不仅可以传输单个值还可以传输整个数据块，减少了每次的加载时间。如果向RAM请求的数据已经存储在缓存中，这种情况称为CACHE HIT。如果请求的数据不在高速缓存中，而必须去RAM取，这种情况称为CACHE MISS。<br>缓存也可以当临时空间使用，存储复杂计算的中间值。但这会引发一个问题–缓存的数据与存储在RAM中的数据不一致，这种不匹配必须记录，在某时刻需要同步所有数据。为此缓存为每个保存的存储块设有特殊标记DIRTY BIT。高速缓存存满时就会发生同步。在缓存删除旧块数据释放空间前，缓存会检查DIRTY BIT，如果DIRTY BIT被占用旧的数据块在加载新的数据块前会写回RAM中。</p>
+<p><strong>指令流水线</strong>处理器按顺序执行提取-解码-执行周期时，当一个指令得到执行后，下一指令可以被解码，还有一条指令被提取实现任务并行。任务并行也会带来问题，会出现要获取的数据可能是正在准备修改的数据，这意味着获得的数据是流水线的旧值。因此CPU需要处理数据依赖关系问题，必要时拖延流水线来避免问题发生。高端处理器利用依赖关系动态的重新排序指令无序执行，减少拖延。</p>
+<h1 id="Programable-Computer"><a href="#Programable-Computer" class="headerlink" title="Programable Computer"></a>Programable Computer</h1><h2 id="早期编程形式"><a href="#早期编程形式" class="headerlink" title="早期编程形式"></a>早期编程形式</h2><p>穿孔卡片插接板面板编程存储程序计算机把程序和数据统一存储到一块共享内存中的方式称为冯诺依曼结构。冯诺依曼计算机的标志是处理单元包括算术和逻辑单元，数据寄存器，指令寄存器以及指令地址寄存器。</p>
+<h2 id="编程语言"><a href="#编程语言" class="headerlink" title="编程语言"></a>编程语言</h2><p><strong>机器语言（机器码）</strong> 在早期计算领域，人们只能用机器码来写整个程序。首先用英语写出程序的高级语言形式（像这种对程序的非正式的高级语言描述叫伪代码）。当程序在纸上编写完毕后，将程序逻辑一步步翻译成二进制机器码（这一步需要参照操作码表之类的东西），完成了翻译后，就可以将程序投入计算机中运行了。</p>
+<p><strong>汇编语言</strong> 人们给操作码简单命名（助记符），其后紧跟操作数组成一个完整指令。这样避免了用一箩筐的1和0来写指令，程序员只要简单写类似“LOAD A 14”的指令。当然CPU并不理解该指令，人们又构建出了一个二进制的可复用的帮助程序，用来读取文字指令，然后自动把文字指令翻译成对应的二进制指令。这个程序叫汇编器，通常每一条汇编语言指令都直接被翻译成对应的机器指令，这是一一对应的关系。所以汇编语言也依赖于底层硬件，程序员仍然要考虑寄存器和内存地址通过封装起不必要的细节，使得构建更为复杂的程序成为可能。</p>
+<p><strong>高级语言</strong> 一般高级语言可以使程序员能够更加专注于解决计算问题，而不是太过关心硬件细节。汇编语言和机器指令是一一对应的关系，但高级语言不同，一行高级语言可能对应CPU执行的几十条指令。完成这个复杂的指令翻译需要编译器。编译器是一种特殊的程序，它可以接受某种编程语言写的程序，并把它转变成CPU可以执行的低级语言，如汇编语言或者二进制的机器码。编译器把不必要的复杂底层封装到一个抽象层，如Python程序员只需要创建内存地址的抽象（变量）</p>
+<p><strong>语句和函数</strong> 高级编程语言语句,赋值语句,控制语句,if 语句,循环语句,while 语句,for 语句…<br><strong>函数封装</strong>为了区分和隐藏复杂性，编程语言会把代码封装为函数（方法）现代编程的本质：将复杂的程序拆分成若干个函数，每个函数负责不同的功能。</p>
+<p><strong>算法</strong>是完成计算的特定步骤。通常完成计算的步骤越少，算法越优。但有时候还需要考虑其他因素如内存的占用。<br><strong>排序算法</strong> 选择排序 —— 排序N个数就需要循环N次，每个循环再循环N次（N^2次）算法输入规模和执行次数之间的关系衡量了算法的时间复杂度，他大致说明了一个算法会运行得有多快；（Big O notation）归并排序 —— 时间复杂度为O；（n log n）</p>
+<p><strong>数据结构</strong>（How to Structure Data）数据在内存中的存储方式。<br><strong>数组</strong> —— 要从数组中取出某个值，需要指定一个索引。几乎所有的编程语言索引都是从0开始的。  </p>
+<div><img src="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/1.png" width="40%"></div><br>索引为零，计算机会去地址1000加上偏移量0得到数值5。<br><br><strong>多维数组</strong>：<br><div><img src="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/2.png" width="60%"></div>
+
+
+<p><strong>字符串</strong>：</p>
+<div><img src="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/3.png" width="40%"></div>
+
+<p>字符串以二进制值0（null）表示字符串在内存中的结束位置。</p>
+<p><strong>结构体数组</strong><br>结构体数组和其他数组一样，大小是固定的不能扩大从而添加更多数据。并且，数组在内存中必然是有序存储的，这也使得它很难在中间位置添加数据。但结构体数组可以用来构建更加复杂的数据结构，从而避免这些限制。</p>
+<p><strong>结构体</strong>（NODE）<br>他会存储一个变量如一个数字或者指针。指针是一种特殊的变量，他会指向内存中的一个位置。使用这种结构体，我们可以构建一个链表，它是一种灵活的数据结构，可以存储许多节点，这是通过使链表中的每个节点指向下一个节点实现的。  </p>
+<div><img src="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/4.png" width="60%"></div>
+
+<p>结构体可能由于创建时间的不同，空间位置是分开的，其他不相关数据可能位于他们中间。如第一个节点包含数值 7 ，它指向的下一个位置是1008，这就是说，链表中的下一个节点在内存中的位置是1008。整个链表是循环的，但他也可以通过值为 0 的指针终止链表。  </p>
+<div><img src="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/5.png" width="60%"></div>
+
+<p>在使用链表时，很少需要关注next指针的值是什么。</p>
+<div><img src="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/6.png" width="60%"></div>
+
+
+<p>不像数组那样大小必须预先定义好，链表可以动态扩展或缩小，可以在内存中分配一个新节点，通过修改next指针把它插入链表。链表很容易实现重排序，切片，反转等操作。由于他的灵活性，许多更加复杂的数据结构都是在链表的基础上搭建的。最常见的是队列和栈。</p>
+<div><img src="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/7.png" width="60%"></div>
+
+
+<p><strong>队列</strong>（FIFO）<br>指针指向链表的第一个节点，第一个节点处理完后，读取他的next指针，并且更新队列的指针使他指向队列中的下一个节点，移除第一个节点（dequeuing）。如果要添加节点（enqueuing），必须遍历整个链表，然后把它的next指针指向下一个节点。栈（LIFO）压入栈、从栈中弹出</p>
+<p><strong>树结构</strong>（TREE）<br>二叉树<br>大多数编程语言都有自己的标准库，包含了各种各样现成的数据结构，避免了从头开始实现这些数据结构。</p>
+<h1 id="Software-Engineering"><a href="#Software-Engineering" class="headerlink" title="Software Engineering"></a>Software Engineering</h1><p>对于千万量级的代码量，将代码封装成函数仍然存在管理问题。解决方案是将函数按不同层次一层层打包，把相关联的代码封装到对象object中（对函数再进行封装）。将功能单元封装成嵌套对象的做法称为面向对象编程（OBJECT ORIENTED PROGRAMMING）。通过把低层次的细节封装，到高阶组件中隐藏复杂性。</p>
+<p><strong>文档</strong><br>指明每个函数的功能以及定义好的应用程序接口（API）</p>
+<p><strong>API</strong><br>API是开发者在不同部分的代码间交流的方式。API允许有权限的人访问适当的函数及数据。</p>
+<p><strong>面向对象</strong><br>面向对象的程序语言通过指明函数是公共的（public）还是私有的（private）来实现，如果一个函数被声明为private，那么只有对象内的函数才能访问到他。隐藏复杂性和有选择性的暴露是面向对象编程的本质，它是构建复杂程序的一种有效且流行的方式</p>
+<p>集成开发环境（IDE）<br>版本控制<br>测试（QA）<br>操作系统<br>操作系统实现了计算机自动运行。操作系统本身也是程序，但他拥有操作硬件的特殊权限，可以运行并管理其他程序。操作系统通常是开机时第一个启动的，其他所有程序都由操作系统启动</p>
+<h2 id="外部设备"><a href="#外部设备" class="headerlink" title="外部设备"></a>外部设备</h2><p>与早期的外部设备交互是非常底层的，要求程序员了解每台设备的详细硬件细节。最重要的是，程序员很少能拿到所有设备来测试代码，所以他们一般通过阅读手册来写代码，然后能正常运行。现在是即插即用，以前是祈祷能用。</p>
+<p>为了更容易地写程序，操作系统充当软件和硬件之间的媒介。更具体地说，操作系统提供API（设备驱动程序）来抽象硬件，通过标准化机制与输入输出硬件交互。比如调用  print() 函数，把结果输到纸上的具体细节由操作系统来处理。随着处理器性能的不断提升，程序往往在机械 I/O 设备上阻塞着。</p>
+<p>为了最大限度利用 CPU 性能，开发出了Atlas Supervisor 的程序。这个操作系统不仅能像早期的批处理系统那样自动加载程序，还可以在单个CPU上同时运行几个程序。像这种多个程序可以同时运行，在单个CPU上共享时间的操作系统能力叫多任务处理。</p>
+<p>同时运行多个程序也会存在问题。每个程序都要占用一些内存，当切换到另一个程序时，我们不能丢失数据，解决办法是，为每一个程序分配专属的内存块。如果一个程序请求占用更多内存，那么操作系统会决定是否同意该请求，如果同意，系统会决定分配什么内存块。这种灵活性会带来一个奇怪的现象，同一程序可能会分配到非连续的内存块，如内存地址0到999，以及2000到2999。真正的程序可能会分配到内存中数十个地方。</p>
+<p>为了隐藏这种复杂性，操作系统会“虚拟化”内存位置。用虚拟内存，程序可以假定内存总是从地址0开始，而内存的实际物理位置被操作系统隐藏和抽象。操作系统和CPU会自动处理虚拟内存和物理内存之间的映射。这种允许程序拥有灵活的内存大小的机制叫动态内存分配，这使内存对程序来说是连续的，他简化了一切，为操作系统同时运行多个程序提供了极大的灵活性，另一个给每个程序单独分配单独内存的好处是更好地隔离他们。如果一个程序出错，开始写入错误的数据，他只能破坏自己的内存不会影响到其他，这个功能叫内存保护。</p>
+<p>1970年代，计算机不仅能同时快速运行多个程序，也能让多个用户同时访问。用户访问计算机是通过“终端”来做的。“终端”只是一个键盘+屏幕连接到计算机，终端本身没有任何处理能力。这时的操作系统不但要处理多个应用程序，还要处理多个用户，为了确保不让其中一个人用光电脑的资源，人们开发了分时操作系统。每个用户只能使用电脑的一小部分处理器，内存性能。</p>
+<p>UNIX<br>操作系统被分成两部分：操作系统核心功能如内存管理，多任务和输入/输出处理（内核）和一堆有用的工具如程序和运行库。这种简单性意味着Unix可以在更便宜和更多样化的硬件上运行，越来越多的开发者开始运用它，同时他也获得了不同编程语言的编译器甚至文本编辑工具的支持，成为1970~80最受欢迎的操作系统。</p>
+<p>到了1980年代早期，一台电脑的成本已经降到个人可以负担的地步，个人或家庭电脑（PC）开始出现。他们的操作系统更加简单。比如微软的磁盘操作系统（MS-DOS）只有16kb，但是他缺少 “多任务” 和 “内存保护” 这样的功能，这意味着程序经常使系统崩溃。目前所广泛使用的操作系统都具有”多任务”和“虚拟内存/内存保护”功能。</p>
+<h3 id="存储器（Storage）"><a href="#存储器（Storage）" class="headerlink" title="存储器（Storage）"></a>存储器（Storage）</h3><p>一般来说，电脑内存是“非永久性的”存储器。而任何写入“存储器”的数据，比如硬盘就是存储的一种。数据会一直存着，直到被覆盖或删除，断电也不会丢失。曾经“易丢性”的介质传输速度快，“非易失性”的介质速度慢。但随着技术发展，两者之间的差异越来越小，两者的属性开始融合。</p>
+<p>最早的存储介质是打孔纸片和打孔纸带。纸片沿用了十几年。因为无需用电，而且便宜耐用。1944年建造ENIAC时采用了延迟线存储器。延迟线存储器的一大缺点是每次只能从一个管道读取一位（bit）数据如果要访问指定位置，需要等到他在循环中出现。所以这种类型的存储器又叫顺序存储器或循环存储器。磁芯存储器在性能，可靠性和成本上渐渐取代延迟线存储器，更重要的是实现了随时访问任意位。磁带存储的主要缺点是访问速度，磁带是连续的，必须倒带或快进以获得特定位置的数据。</p>
+<p>磁鼓存储器技术的成熟带来了硬盘存储的发展。硬盘和磁鼓非常类似，磁盘表面有磁性，写入头和读取头可以处理上面的 1 和 0 。硬盘的好处是薄，可以叠在一起为数据存储提供更多表面积。要访问特定的bit，一个读/写磁头会上下移动，找到正确的磁盘，然后磁头会滑进去。同时磁盘也会高速旋转，所以读写头要等到正确的位置转过来。访问任意数据花费时间叫<code>寻道时间</code>。软盘，CD，DVD是利用光学存储，光盘表面有很多小坑，造成光的不同反射，光学传感器会捕捉到不同反射，并解码为0和1。如今，存储技术在向固态发展，没有机械的活动部件而是集成电路。SSD的访问时间依然比RAM慢很多倍，所以如今的计算机仍然使用内存层次结构。</p>
+<h3 id="文件和文件系统"><a href="#文件和文件系统" class="headerlink" title="文件和文件系统"></a>文件和文件系统</h3><p>文件格式随意排列文件的数据是完全可以的，但如果用特定格式排列会更有用，这叫文件格式（File Format）。你可以自己发明自己的文件格式，但最好的方式是用现成的标准如 Jpg，text.. </p>
+<p>TXT<br>就像其他文件，文本文件的原始值只是一长串二进制数字。我们可以转换成十进制看，但没什么帮助，理解这些数据的关键是 知道TXT文件用的是ASCII编码，通过十进制对照得到最终文本信息。</p>
+<p>WAV<br>WAV是音频文件格式，在正确读取数据前，我们需要知道一些信息如码率（Bit Rate）以及是单声道还是立体声。关于数据的数据叫元数据(Meta Data)。</p>
+<div><img src="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/%E5%85%83%E6%95%B0%E6%8D%AE.png" width="60%"></div>
+
+
+
+<p>元数据<br>元数据存在于文件的开头，在实际数据之前，也叫文件头（Header）。音频文件直接位于元数据后面，以一长串数字形式存储。这些值代表声音的每次采样的幅度，这些数字正式存储在wav文件中的数据。</p>
+<div><img src="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/%E9%9F%B3%E9%A2%91%E6%96%87%E4%BB%B6%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F.png" width="60%"></div>
+
+
+<p>音频文件存储方式<br>Bitmap（BMP）<br>计算机上，图片是由很多像素小方块组成，每个小方块都是由红绿蓝三原色组合而成。bmp文件开头也有元数据，有图片宽度，图片高度，颜色深度。如果图片是4像素宽，4像素高，颜色深度24（8bit代表红色，8bit代表绿色，8bit代表蓝色）。图像通常存储成一串像素值。</p>
+<div><img src="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/%E5%9B%BE%E7%89%87%E5%85%83%E6%95%B0%E6%8D%AE.png" width="60%"></div>
+
+<div><img src="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/%E5%9B%BE%E5%83%8F%E6%95%B0%E6%8D%AE1.png" width="60%"></div>
+
+<p>任何格式的文件，归根结底都是一样的，都是一长串二进制。文件格式是理解数据的关键。</p>
+<p>文件存储方式<br>底层存储介质可能是磁带，磁鼓，磁盘或集成电路，硬件和软件的抽象可以让我们把存储器看作是一长串可以存内容的小桶。  </p>
+<p>早期的电脑存储器就像是一整个大文件，数据从头到尾直到占满，随着计算能力和存储容量的提高，同时存储多个文件变得非常有用。最简单的方法就是将文件连续存储。</p>
+<div><img src="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/%E6%96%87%E4%BB%B6%E8%BF%9E%E7%BB%AD%E5%AD%98%E5%82%A8.png" width="60%"></div>
+
+<p> 但计算机是如何区分文件的开的头和结尾的呢？存储器没有文件的概念，他们只是存储大量的bit，所以为了存储多个文件，我们为您需要一个特殊的文件目录文件记录其他文件的位置。</p>
+<div><img src="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/%E7%9B%AE%E5%BD%95%E6%96%87%E4%BB%B6.png" width="60%"></div>
+
+<p>大多数情况他读在存储器的开头（Location 0）。</p>
+<div><img src="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/%E7%9B%AE%E5%BD%95%E6%96%87%E4%BB%B61.png" width="60%"></div>
+
+<p>目录文件内，存着所有其他文件的名字，扩展名进一步帮助程序识别文件类型。目录文件还存储着有关这些文件的元数据，比如创建时间，最后修改时间，文件所有者，读写权限，最重要的是目录文件里包含文件的起始位置和文件长度。如果要添加文件，删除文件，更改文件名之类的操作，我们必须更新目录文件中的信息。目录文件及对其的管理是一个非常简单的文件系统例子。文件系统负责管理文件，以上这个例子叫平面文件系统，因为文件都存在同一层次。</p>
+<div><img src="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/%E5%A4%9A%E6%96%87%E4%BB%B6.png" width="60%"></div>
+
+<div><img src="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/%E6%96%87%E4%BB%B6%E5%9D%97.png" width="60%"></div>
+
+<p>多个文件紧密放在一起会有一个问题，如果给前一个文件添加数据，就会覆盖掉后面文件的一部分。所以现代文件系统会做两件事，首先把文件存在块中。留下了一点额外的空间便于改动叫预留空间。</p>
+<div><img src="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/%E9%A2%84%E7%95%99%E7%A9%BA%E9%97%B4.png" width="60%"></div>
+
+<p>在这样的方案中，目录文件还需要记录文件分别存在哪个块里。文件系统所做的第二件事是允许文件被拆分多份，存在不同块里，文件就可以轻松实现增大缩小。如果想要删除某个文件，只需要在目录文件中删除那条记录，使文件用的块可用。注意我们并没有真正删除数据，只是删除了记录，之后该块会被新的数据覆盖，但在此之前，数据还在原处。</p>
+<div><img src="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/%E5%BF%AB%E5%88%86%E9%85%8D.png" width="60%"></div>
+
+<p>同一文件存在非相邻的块中且没有顺序叫碎片。碎片是增删改文件导致的不可避免地副产品。现实世界地文件系统中，大文件可能存在数百个块里，不想等五分钟才打开文件就需要<code>碎片整理</code>。碎片整理就是把数据放到顺序正确地相连的块中。</p>
+<div><img src="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/%E7%A2%8E%E7%89%87%E6%95%B4%E7%90%86.png" width="60%"></div>
+
+<p>平面文件系统的文件存储在同一个目录里，文件数量的剧加使得<code>分层文件系统</code>变得更加实用。分层文件系统就是可以将文件放到不同文件夹。这时的目录文件不仅要指向文件，还有其他目录。为了区分文件和目录，我们需要额外的元数据。加入目录文件在最顶层，这个目录也叫根目录，所有的文件和文件夹都在这个目录下。分层文件系统除了可以创建无限深度的结构，还可以轻松移动文件。移动文件时不需要挪动任何数据块，只需要简单修改两目录文件，从一个中删除一条记录，并加到另一个。文件本身还在原来的块中。</p>
+<div><img src="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/%E5%88%86%E5%B1%82%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F.png" width="60%"></div>
+
+<p>文件系统使我们不必关心文件在磁带或磁盘中的具体位置，使我们可以方便地整理和访问文件。</p>
+<p>文件压缩<br>压缩：将数据压缩成更小尺寸，用更少的位（bit）来编码数据。</p>
+<p>常见压缩方法<br>“游程编码”：通过减少重复信息达到压缩的目的。标记文件中经常出现的重复的值，删除重复部分。这种压缩方式可以很容易恢复到原来的数据，这种叫无损压缩。</p>
+<p>“字典编码”也是常见的无损压缩方式。</p>
+<p>“感知编码”：有损压缩，通常用在对音频，视频，图片的压缩上，根据人类能感知的范围来删除人类无法感知的部分。</p>
+<h1 id="Networks"><a href="#Networks" class="headerlink" title="Networks"></a>Networks</h1><h2 id="局域网（LAN）【物理层】"><a href="#局域网（LAN）【物理层】" class="headerlink" title="局域网（LAN）【物理层】"></a>局域网（LAN）【物理层】</h2><p><strong>以太网模型</strong>最简单的形式，若干台计算机连接在同一个以太网络线上。当一台计算机需要发送给数据给另一台计算机时，数据以电信号的形式在网络上传输。因为网络是所有计算机共享的，所有计算机都可以获得数据，但并不知道数据是发给谁的。为了解决这个问题，以太网要求每台计算机都具有唯一的媒体访问控制地址——Mac地址。</p>
+<div><img src="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/m1.png" width="60%"></div>
+
+
+<p>在数据传输过程中，mac地址作为前缀被添加到消息头中，计算机只需要处理网络上特定的带有地址前缀的信息。这种方法简称CMSA。</p>
+<div><img src="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/m2.png" width="60%"></div>
+
+<p><strong>带宽</strong>在计算机网络中，带宽用来表示网络的通信线路所能传送数据的能力，因此网络带宽 表示在单位时间内从网络中的某一点到另一点所能通过的“最高数据率”.单位同样是HZ。</p>
+<p><strong>碰撞</strong> 【数据链路层】网络中的数据传输少时，发送方和接收方可以正常通信。但当双方同时向对方发送信息时，就会产生碰撞。如果计算机在传输过程中发生了碰撞，他会等待一段随机时间再重试，如果还是出现碰撞，表明网络拥堵，会以指数方式增加等待时间，以此往复。当然这这只是权宜之计，这种情况可能会出现某计算机一直等待的情况。</p>
+<div><img src="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/m3.png" width="60%"></div>
+
+
+<p><strong>指数补偿</strong> （Exponential Backoff）<br>在出现碰撞时，以指数方式增长等待时间的方式叫指数补偿。以太网，wifi和许多传输协议都使用这种方式。</p>
+<p><strong>冲突域</strong>（ Collision Domain）<br>为了减少冲突提高效率，需要缩减共享网络上的设备数量（冲突域）。可以通过网络交换机将这个网络分成两个小部分。只用在必要时才在两部分间传输数据。他通过mac地址列表区分位于网络的那一侧实现目的。</p>
+<div><img src="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/m4.png" width="60%"></div>
+
+<p>在网络的每一侧，数据传输不会相互影响。这就是大型计算机网络的构建方式。</p>
+<div><img src="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/m5.png" width="60%"></div>
+
+<p>​冲突域：一个站点向另一个站点发出信号。除目的站点外，有多少站点能收到这个信号。这些站点就构成一个冲突域。</p>
+<p><strong>路由 【网络层】</strong><br>大型网络的有趣之处在于，从一个地方获取数据可以有多条路径。连接两台远程计算机的最简单的方式是分配一条专用的线，这也是早期电话的工作方式，这种方式叫 电路交换。</p>
+<div><img src="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/m6.png" width="80%"></div>
+
+<p>这种专线方式的优势在于数据不会共享，这种方式一般用于军方，银行等。</p>
+<div><img src="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/m7.png" width="80%"></div>
+
+<p>将数据从一个地方传送到另一个地方的另一种方式叫 消息交换，类似于邮政系统的运作方式。消息从几个站点，而不是A到B传输。</p>
+<div><img src="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/m8.png" width="80%"></div>
+
+<p>每一个站点都知道他的下一个发送位置，因为他保存了目的地表格。消息交换优于电路交换之处在于多路径，有更高的容错和可靠性。缺点在于，信息量大时，他们可能阻塞网络。解决方案是，将大型传输切割成许多小块（数据包）每个数据包都包含网络目标地址，所以路由器知道如何转发他们。这种格式是由IP协议定义的，连接到网络的计算机都会获得一个IP地址。</p>
+<p>这种将数据整理成数据包传输的方式叫 分组交换。</p>
+<p>信息通信协议：ICMP协议，BGP协议</p>
+<p>跳数（HOP COUNT）<br>消息传输经过的总路由数叫跳数。通过跟踪跳数可以发现路由问题。避免消息在某路由间来回传输。通过 Hop Limit 。</p>
+<p>Internet协议<br>随着数百万台计算机同时在线，交换数据，瓶颈会在毫秒间产生和消失。网络路由器（Routers）不断平衡负载，确保数据可靠快速交付。称为拥堵控制。有时候来自同一消息的不同数据包会采用不同路由从而由于某些原因导致部分数据包无法到达目的地。</p>
+<p>浏览在线视频的过程：连接到局域网（LAN）通过互联网服务提供商提供的路由连接到广域网（WAN）</p>
+<p>可以通过traceroute 命令跟踪路由情况。</p>
+<p>互联网是一个庞大的分布式数据包传输网络。</p>
+<div><img src="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/m9.png" width="60%"></div>
+
+<p>IP协议<br>IP协议是一种底层协议。数据包Header中仅存有目标地址，所以计算机无法选择合适的应用来处理数据。</p>
+<p>UDP协议 【传输层】<br>UDP协议是位于IP协议之上的。</p>
+<div><img src="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/m10.png" width="60%"></div>
+
+<p>UDP有自己的Header，Header中有许多信息。比如端口号。每一个需要访问互联网的应用都需要操作系统分配一个唯一端口。当数据包到达计算机时，操作系统会查看UDPHeader获取端口号，并将数据包按端口号发送给对应应用。</p>
+<p>UDPHeader中还包括校验和数据，来验证传输数据的正确性。如果传输前后和一致则正常，若不一致，则可能出现了数据损坏。UDP本身没有数据修复机制，而且不会发送请求获取新的副本，所以接受损坏数据的程序只会收到警告并丢弃该损坏的数据包。此外，UDP协议未提供相关机制，使发送方确认数据是否成功到达目的地。但是UDP这是简单和快速，会用于视频聊天应用（聊天过程可能会有丢包现象）</p>
+<p>总的来说，IP协议将数据包发送给正确的计算机，而UDP协议将数据包发送给正确的应用程序处理。</p>
+<div><img src="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/m11.png" width="60%"></div>
+
+<p>TCP协议</p>
+<div><img src="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/m12.png" width="60%"></div>
+
+<p>与UDP类似，TCPHeader中也包含端口号与校验和。此外，TCP包都会被编号，这些编号可以使接收方将数据包排序，即使数据包不是同时到达的情况下。</p>
+<p>并且，TCP需要当接收方成功获得一个数据包且校验成功需要发回一个确认（ACK），知道数据成功发送后，发送方再发送第二个数据包，如果数据包有问题，则重复发送。</p>
+<div><img src="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/m13.png" width="60%"></div>
+
+
+<p>TCP可以同时并行发送多个数据包，返回多个ACK，充分利用带宽，而不是浪费时间等待确认。</p>
+<div><img src="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/m14.png" width="60%"></div>
+
+
+<p>TCP数据传输可靠稳定，但是开销也大。</p>
+<p>DNS<br>当在浏览器输入网址后，他会访问DNS服务器（通常由ISP提供，用来查找地址），并返回地址。</p>
+<p>域名一般以树状结构存储在DNS服务器中。</p>
+<div><img src="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/m15.png" width="60%"></div><br><div><img src="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/m16.png" width="60%"></div>
+
+
+
+<p>万维网 （Web）<br>万维网和因特网是不同的。万维网是运行在因特网之上的。而因特网指为不同应用传输数据的底层管道。</p>
+<p>当请求一个网站时，首先会DNS解析得到IP地址，浏览器与服务器建立TCP连接端口号为 80，向服务器请求超文本页面 （超文本传输传输协议），发送get请求</p>
+<div><img src="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/m17.png" width="60%"></div><br><div><img src="https://img-1256318300.cos.ap-shanghai.myqcloud.com/2018/12-02/m18.png" width="60%"></div>
+
+<h1 id="Cybersecurity"><a href="#Cybersecurity" class="headerlink" title="Cybersecurity"></a>Cybersecurity</h1>
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">Etiqueta</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#How-Computers-Work"><span class="toc-number">1.</span> <span class="toc-text">How Computers Work</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#早期计算设备"><span class="toc-number">1.1.</span> <span class="toc-text">早期计算设备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#布尔逻辑与二进制"><span class="toc-number">1.2.</span> <span class="toc-text">布尔逻辑与二进制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#计算机的计算原理"><span class="toc-number">1.3.</span> <span class="toc-text">计算机的计算原理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Programable-Computer"><span class="toc-number">2.</span> <span class="toc-text">Programable Computer</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#早期编程形式"><span class="toc-number">2.1.</span> <span class="toc-text">早期编程形式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编程语言"><span class="toc-number">2.2.</span> <span class="toc-text">编程语言</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Software-Engineering"><span class="toc-number">3.</span> <span class="toc-text">Software Engineering</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#外部设备"><span class="toc-number">3.1.</span> <span class="toc-text">外部设备</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#存储器（Storage）"><span class="toc-number">3.1.1.</span> <span class="toc-text">存储器（Storage）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件和文件系统"><span class="toc-number">3.1.2.</span> <span class="toc-text">文件和文件系统</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Networks"><span class="toc-number">4.</span> <span class="toc-text">Networks</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#局域网（LAN）【物理层】"><span class="toc-number">4.1.</span> <span class="toc-text">局域网（LAN）【物理层】</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Cybersecurity"><span class="toc-number">5.</span> <span class="toc-text">Cybersecurity</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://bianwangui.github.io/2017/12/02/2017/计算机科学/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://bianwangui.github.io/2017/12/02/2017/计算机科学/&text=计算机科学"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://bianwangui.github.io/2017/12/02/2017/计算机科学/&title=计算机科学"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://bianwangui.github.io/2017/12/02/2017/计算机科学/&is_video=false&description=计算机科学"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=计算机科学&body=Check out this article: https://bianwangui.github.io/2017/12/02/2017/计算机科学/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://bianwangui.github.io/2017/12/02/2017/计算机科学/&title=计算机科学"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://bianwangui.github.io/2017/12/02/2017/计算机科学/&title=计算机科学"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://bianwangui.github.io/2017/12/02/2017/计算机科学/&title=计算机科学"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://bianwangui.github.io/2017/12/02/2017/计算机科学/&title=计算机科学"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://bianwangui.github.io/2017/12/02/2017/计算机科学/&name=计算机科学&description=&lt;blockquote&gt;
+&lt;p&gt;计算机科学&lt;/p&gt;
+&lt;/blockquote&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://bianwangui.github.io/2017/12/02/2017/计算机科学/&t=计算机科学"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2020
+    万 少 侠
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">Etiqueta</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<!-- clipboard -->
+
+  <script src="/lib/clipboard/clipboard.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>

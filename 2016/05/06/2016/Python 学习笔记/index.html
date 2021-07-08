@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Python 实践过程中的一些思考  从编程语言具体实现，理解 变量、数据类型、表达式、语句、子程序等概念。">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python 学习笔记">
+<meta property="og:url" content="https://bianwangui.github.io/2016/05/06/2016/Python 学习笔记/index.html">
+<meta property="og:site_name" content="万少侠写字的地方">
+<meta property="og:description" content="Python 实践过程中的一些思考  从编程语言具体实现，理解 变量、数据类型、表达式、语句、子程序等概念。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-09-26T01:52:56.572Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python 学习笔记">
+<meta name="twitter:description" content="Python 实践过程中的一些思考  从编程语言具体实现，理解 变量、数据类型、表达式、语句、子程序等概念。">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Python 学习笔记</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">Etiqueta</a></li>
+        
+      </ul>
+    </span>
+    <br>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2016/06/06/2016/MIUI Root/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://bianwangui.github.io/2016/05/06/2016/Python 学习笔记/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://bianwangui.github.io/2016/05/06/2016/Python 学习笔记/&text=Python 学习笔记"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://bianwangui.github.io/2016/05/06/2016/Python 学习笔记/&title=Python 学习笔记"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://bianwangui.github.io/2016/05/06/2016/Python 学习笔记/&is_video=false&description=Python 学习笔记"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Python 学习笔记&body=Check out this article: https://bianwangui.github.io/2016/05/06/2016/Python 学习笔记/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://bianwangui.github.io/2016/05/06/2016/Python 学习笔记/&title=Python 学习笔记"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://bianwangui.github.io/2016/05/06/2016/Python 学习笔记/&title=Python 学习笔记"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://bianwangui.github.io/2016/05/06/2016/Python 学习笔记/&title=Python 学习笔记"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://bianwangui.github.io/2016/05/06/2016/Python 学习笔记/&title=Python 学习笔记"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://bianwangui.github.io/2016/05/06/2016/Python 学习笔记/&name=Python 学习笔记&description=&lt;blockquote&gt;
+&lt;p&gt;Python 实践过程中的一些思考&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;从编程语言具体实现，理解 &lt;strong&gt;变量&lt;/strong&gt;、&lt;strong&gt;数据类型&lt;/strong&gt;、&lt;strong&gt;表达式&lt;/strong&gt;、&lt;strong&gt;语句&lt;/strong&gt;、&lt;strong&gt;子程序&lt;/strong&gt;等概念。&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://bianwangui.github.io/2016/05/06/2016/Python 学习笔记/&t=Python 学习笔记"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-编码规范"><span class="toc-number">1.</span> <span class="toc-text">1. 编码规范</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-执行方式"><span class="toc-number">2.</span> <span class="toc-text">2. 执行方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-变量"><span class="toc-number">3.</span> <span class="toc-text">3. 变量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-标识符（变量名）"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 标识符（变量名）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-地址"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 地址</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-类型"><span class="toc-number">3.3.</span> <span class="toc-text">3.3 类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-值"><span class="toc-number">3.4.</span> <span class="toc-text">3.4 值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-生存期"><span class="toc-number">3.5.</span> <span class="toc-text">3.5 生存期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-6-作用域"><span class="toc-number">3.6.</span> <span class="toc-text">3.6 作用域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-7-常量"><span class="toc-number">3.7.</span> <span class="toc-text">3.7 常量</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-数据类型"><span class="toc-number">4.</span> <span class="toc-text">4. 数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-基本数据类型"><span class="toc-number">4.1.</span> <span class="toc-text">4.1 基本数据类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-字符串"><span class="toc-number">4.2.</span> <span class="toc-text">4.2 字符串</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-数组类型"><span class="toc-number">4.3.</span> <span class="toc-text">4.3 数组类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-4-关联数组"><span class="toc-number">4.4.</span> <span class="toc-text">4.4 关联数组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-记录类型"><span class="toc-number">4.5.</span> <span class="toc-text">4.5 记录类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-6-元组类型"><span class="toc-number">4.6.</span> <span class="toc-text">4.6 元组类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-7-列表类型"><span class="toc-number">4.7.</span> <span class="toc-text">4.7 列表类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-8-指针和引用类型"><span class="toc-number">4.8.</span> <span class="toc-text">4.8 指针和引用类型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-表达式与赋值语句"><span class="toc-number">5.</span> <span class="toc-text">5. 表达式与赋值语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-语句级控制结构"><span class="toc-number">6.</span> <span class="toc-text">6. 语句级控制结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-1-条件语句"><span class="toc-number">6.1.</span> <span class="toc-text">6.1 条件语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-循环语句"><span class="toc-number">6.2.</span> <span class="toc-text">6.2 循环语句</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-子程序"><span class="toc-number">7.</span> <span class="toc-text">7. 子程序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1-函数"><span class="toc-number">7.1.</span> <span class="toc-text">7.1 函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-过程"><span class="toc-number">7.2.</span> <span class="toc-text">7.2 过程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#抽象数据类型和封装结构"><span class="toc-number">8.</span> <span class="toc-text">抽象数据类型和封装结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#面向对象程序设计的支持"><span class="toc-number">9.</span> <span class="toc-text">面向对象程序设计的支持</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#继承"><span class="toc-number"></span> <span class="toc-text">继承</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#派生类与父类"><span class="toc-number">1.</span> <span class="toc-text">派生类与父类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实例方法和实列变量（属性）"><span class="toc-number">2.</span> <span class="toc-text">实例方法和实列变量（属性）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#单继承与多继承"><span class="toc-number">3.</span> <span class="toc-text">单继承与多继承</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#继承的缺点："><span class="toc-number">4.</span> <span class="toc-text">继承的缺点：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#动态绑定"><span class="toc-number">5.</span> <span class="toc-text">动态绑定</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#并发"><span class="toc-number"></span> <span class="toc-text">并发</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#并发的种类"><span class="toc-number">1.</span> <span class="toc-text">并发的种类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试"><span class="toc-number"></span> <span class="toc-text">测试</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#在解释器内部，调用t-prt-实际上会解释成Test-prt-t-，也就是说把self替换成类的实例。"><span class="toc-number"></span> <span class="toc-text">在解释器内部，调用t.prt()实际上会解释成Test.prt(t)，也就是说把self替换成类的实例。</span></a>
+    </li></div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Python 学习笔记
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <span itemprop="name">万少侠写字的地方</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2016-05-05T16:00:00.000Z" itemprop="datePublished">2016-05-06</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/Language/">Language</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/Python/">Python</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <blockquote>
+<p>Python 实践过程中的一些思考</p>
+</blockquote>
+<p>从编程语言具体实现，理解 <strong>变量</strong>、<strong>数据类型</strong>、<strong>表达式</strong>、<strong>语句</strong>、<strong>子程序</strong>等概念。</p>
+<a id="more"></a>
+<h3 id="1-编码规范"><a href="#1-编码规范" class="headerlink" title="1. 编码规范"></a>1. 编码规范</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># the zen of Python</span></span><br><span class="line"><span class="keyword">import</span> this</span><br></pre></td></tr></table></figure>
+<h3 id="2-执行方式"><a href="#2-执行方式" class="headerlink" title="2. 执行方式"></a>2. 执行方式</h3><ul>
+<li>编译执行</li>
+<li>解释执行<br>Python是解释执行的。 但<code>.py</code>文件会先通过编译器编译成<code>.pyc</code>文件(是字节码而不是机器码)，然后在虚拟机上运行。</li>
+</ul>
+<h3 id="3-变量"><a href="#3-变量" class="headerlink" title="3. 变量"></a>3. 变量</h3><p>变量是<strong>物理存储单元的抽象</strong>。</p>
+<h4 id="3-1-标识符（变量名）"><a href="#3-1-标识符（变量名）" class="headerlink" title="3.1 标识符（变量名）"></a>3.1 标识符（变量名）</h4><ul>
+<li>大小写敏感</li>
+<li>字母、数字、下划线开头</li>
+<li>创建有意义的变量名，避免使用字母<code>O</code>和<code>l</code>等易混淆的字符</li>
+<li>尤其在import模块时，模块名与已有变量相同会出现莫名其妙的问题</li>
+</ul>
+<p><strong>关键字</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 35个关键字</span></span><br><span class="line"><span class="keyword">import</span> keyword</span><br><span class="line">keyword.kwlist</span><br></pre></td></tr></table></figure></p>
+<h4 id="3-2-地址"><a href="#3-2-地址" class="headerlink" title="3.2 地址"></a>3.2 地址</h4><p>变量的地址是与这个变量相关联的存储地址。</p>
+<h4 id="3-3-类型"><a href="#3-3-类型" class="headerlink" title="3.3 类型"></a>3.3 类型</h4><p>变量的类型决定了变量的取值范围及该类型值的操作集合。Python中变量类型的绑定是动态的，所有的变量都是引用，没有类型。</p>
+<h4 id="3-4-值"><a href="#3-4-值" class="headerlink" title="3.4 值"></a>3.4 值</h4><p>变量的值是与这个变量相关联的存储单元的内容。</p>
+<p><strong>变量赋值的过程:</strong></p>
+<blockquote>
+<p>当创建一个变量<code>x = 2</code>时，解释器会先找内存中有没有<code>2</code>的值。如果有直接做绑定，然后<code>2</code>这个值得引用计数加<code>1</code>。如果没就开辟一段内存空间，创建一个<code>2</code>的值; 如果修改<code>x = 3</code>，那么解释器就会把变量<code>x</code>的与3的内存地址绑定，把<code>3</code>的引用加<code>1</code>，此时，内存中的整数值<code>2</code>没有被引用了，当解释器检查到<code>2</code>的引用为0时就会启动内存回收机制把此内存空间给释放掉了。</p>
+</blockquote>
+<h4 id="3-5-生存期"><a href="#3-5-生存期" class="headerlink" title="3.5 生存期"></a>3.5 生存期</h4><p>静态变量、栈动态变量、显性堆动态变量、隐性堆动态变量d</p>
+<h4 id="3-6-作用域"><a href="#3-6-作用域" class="headerlink" title="3.6 作用域"></a>3.6 作用域</h4><p>当 Python 遇到一个变量时会按<code>L-E-G-B</code>的顺序进行搜索。<br>全局变量只有在函数中声明为全局变量时，才能进行赋值，否则会生成一个新局部变量。<br>PYTHON的作用域由def、class、lambda等语句产生，if、try、for等语句并不会产生新的作用域。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(locals())  <span class="comment"># 访问本地命名空间</span></span><br><span class="line">print(globals())  <span class="comment"># 访问全局命名空间</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="3-7-常量"><a href="#3-7-常量" class="headerlink" title="3.7 常量"></a>3.7 常量</h4><ul>
+<li>常量一个重要的作用是将程序参数化。</li>
+<li><code>None</code>是一个特殊的常量，用来占位和变量解除绑定。</li>
+</ul>
+<h3 id="4-数据类型"><a href="#4-数据类型" class="headerlink" title="4. 数据类型"></a>4. 数据类型</h3><p>决定程序完成任务的难易程度的一个重要因素， 是正在使用的语言中已有的数据类型与要解决的现实问题的匹配程度。</p>
+<h4 id="4-1-基本数据类型"><a href="#4-1-基本数据类型" class="headerlink" title="4.1 基本数据类型"></a>4.1 基本数据类型</h4><ul>
+<li>整数(大多数整数类型是硬件直接支持的)、浮点数、复数</li>
+</ul>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 浮点数精度丢失，是因为浮点数转化为二进制表示时会出现误差</span></span><br><span class="line">&gt;&gt;&gt;<span class="number">0.2</span> + <span class="number">0.1</span></span><br><span class="line"><span class="number">0.30000000000004</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>布尔类型（常在程序中用作开关或标记）</li>
+</ul>
+<p>在需要许多条件都满足才继续运行的程序中定义一个变量用于判断整个程序是否处于活动状态，这个变量被称为<code>标志</code>。在while语句中就只需检查一个条件（标志的当前值是否为True），并将测试是否发生了将标志设置为False的事件，从而让程序变得更为整洁。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">active = <span class="keyword">True</span> <span class="comment"># 标志</span></span><br><span class="line"><span class="keyword">while</span> active:</span><br><span class="line">    message = input(prompt)</span><br><span class="line">    <span class="keyword">if</span> message == <span class="string">'quit'</span>:</span><br><span class="line">        active = <span class="keyword">False</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(message)</span><br></pre></td></tr></table></figure></p>
+<h4 id="4-2-字符串"><a href="#4-2-字符串" class="headerlink" title="4.2 字符串"></a>4.2 字符串</h4><p>Python中字符串是基本类型。<br><strong>常用操作</strong>  </p>
+<ul>
+<li>赋值 </li>
+<li>拼接 </li>
+<li>索引</li>
+<li>子串引用 （切片）</li>
+<li>比较 </li>
+<li>模式匹配（正则）</li>
+<li>字符成员操作</li>
+</ul>
+<p><strong>常用方法</strong>  </p>
+<ul>
+<li>查找</li>
+<li>替换</li>
+</ul>
+<h4 id="4-3-数组类型"><a href="#4-3-数组类型" class="headerlink" title="4.3 数组类型"></a>4.3 数组类型</h4><p>Python中的数组称为列表，它拥有动态数组的所有特点。数组的元素是对对象的引用。</p>
+<p><strong>数组初始化</strong><br><strong>数组操作</strong>  </p>
+<ul>
+<li>赋值(Python中的数组赋值只是改变引用关系)</li>
+<li>连接（+）</li>
+<li>比较（is、==）</li>
+<li>切片（切片是把数组的一部分作为一个整体来引用的机制）</li>
+<li>判断元素是否在数组中</li>
+</ul>
+<h4 id="4-4-关联数组"><a href="#4-4-关联数组" class="headerlink" title="4.4 关联数组"></a>4.4 关联数组</h4><p>Python的关联数组（字典）值是对对象的引用。</p>
+<blockquote>
+<p>如果需要搜索元素，关联数组比数组好得多，因为使用隐式散列操作来访问元素是非常有效的。另一方面，如果必须处理列表中的每个元素，则使用数组更高效。</p>
+</blockquote>
+<h4 id="4-5-记录类型"><a href="#4-5-记录类型" class="headerlink" title="4.5 记录类型"></a>4.5 记录类型</h4><p>记录是指各种数据元素的集合。在集合中，单个元素通过名称来标识，并通过从结构开始的偏移量来访问（Python中无记录类型）。</p>
+<h4 id="4-6-元组类型"><a href="#4-6-元组类型" class="headerlink" title="4.6 元组类型"></a>4.6 元组类型</h4><p>元组的一个用途是当必须把数组编写为受保护的类型，例如把数组发送为外部函数的一个参数，且用户不希望函数能修改参数时，就可以使用元组。</p>
+<h4 id="4-7-列表类型"><a href="#4-7-列表类型" class="headerlink" title="4.7 列表类型"></a>4.7 列表类型</h4><p>Python中的列表是可变的。列表是Python的数组。</p>
+<blockquote>
+<p>Python中的一个强大机制，列表推导式</p>
+</blockquote>
+<h4 id="4-8-指针和引用类型"><a href="#4-8-指针和引用类型" class="headerlink" title="4.8 指针和引用类型"></a>4.8 指针和引用类型</h4><p>指针类型变量的取值范围是由<code>内存地址</code>的值和特殊的值<code>nil</code>构成的。<code>nil</code> 并不是一个有效的地址，它只表明该指针目前无法用来引用内存地址。  </p>
+<ul>
+<li>指针提供了间接寻址的功能，这在汇编语言编程中经常用到</li>
+<li>指针提供了一种管理动态存储空间的方式</li>
+<li>指针不同于标量变量，因为它用来引用其他变量，而不是存储数据。这两种变量分别称为引用类型和值类型。</li>
+</ul>
+<blockquote>
+<p>引用类型的变量和指针区别：指针指向内存中的地址，而引用指向内存中的对象或值。在Python等面向对象语言中，所有变量都是引用。它们总是隐式地释放，而且，这些变量的值都是不能访问的。</p>
+</blockquote>
+<h3 id="5-表达式与赋值语句"><a href="#5-表达式与赋值语句" class="headerlink" title="5. 表达式与赋值语句"></a>5. 表达式与赋值语句</h3><p>表达式是编程语言中描述计算过程的基本工具。语句和表达式的区别是：语句是指做某事，表达式就指某事。</p>
+<p><strong>算术表达式</strong><br>运算符的运算顺序</p>
+<p><strong>关系表达式</strong><br>在某些条件表达式中检查两个值相等可能没有检查两个值不等来的效率高。</p>
+<p><strong>布尔表达式</strong><br>Python中的所有逻辑运算符都进行<strong>短路求值</strong>。短路求值的特性可以在某些情况下减少计算量，提高效率。</p>
+<p><strong>条件表达式</strong>  </p>
+<p><strong>类型转换</strong><br>显式类型转换叫做强制类型转换。</p>
+<p><strong>赋值语句</strong><br>赋值语句提供了用户动态改变变量与其值的绑定方法。</p>
+<h3 id="6-语句级控制结构"><a href="#6-语句级控制结构" class="headerlink" title="6. 语句级控制结构"></a>6. 语句级控制结构</h3><p>任何能够用流程图来表示的算法，都能用只包含两种控制语句的编程语言实现。其一是能在两种控制流程路径中作出选择的<strong>条件语句</strong>，其二是带有逻辑控制的<strong>循环语句</strong>。</p>
+<h4 id="6-1-条件语句"><a href="#6-1-条件语句" class="headerlink" title="6.1 条件语句"></a>6.1 条件语句</h4><h4 id="6-2-循环语句"><a href="#6-2-循环语句" class="headerlink" title="6.2 循环语句"></a>6.2 循环语句</h4><p>迭代是计算机能力的精华。</p>
+<p><strong>计数控制循环</strong><br>计数控制语句包含一个变量（循环变量），它记录着目前的计数。由于循环变量的作用域是循环体，它们的值在循环结束后就没有意义了。for循环就是计数循环。</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Python3 中for循环不会产生新的作用域, 循环变量在循环外依然可以被访问!!!</span></span><br><span class="line"><span class="comment"># 而且当可迭代对象为空时, 循环变量不会被赋值 -- 循环外的 print(i)会出现未绑定异常 !!!</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):  <span class="comment"># 用于循环的变量尽量使用单字符</span></span><br><span class="line">    print(i)</span><br><span class="line"></span><br><span class="line">print(i)  <span class="comment"># 循环变量在循环体外依然可以被访问 !!!</span></span><br></pre></td></tr></table></figure>
+<p><strong>逻辑控制循环</strong>    </p>
+<p><strong>自定义循环控制机制</strong><br>break<br>continue</p>
+<p><strong>基于数据结构的迭代</strong><br>迭代器具有历史敏感性。</p>
+<h3 id="7-子程序"><a href="#7-子程序" class="headerlink" title="7. 子程序"></a>7. 子程序</h3><h4 id="7-1-函数"><a href="#7-1-函数" class="headerlink" title="7.1 函数"></a>7.1 函数</h4><p>Python函数的def语句是可执行的。执行def语句时，其后的函数名会分配给指定的函数体。<br>当函数改变其参数或者全局变量时，我们就说函数有<strong>副作用</strong>(全局变量在函数外声明，但是可以由函数访问）</p>
+<blockquote>
+<p>在函数中访问全局变量也是应该禁止的。但是，当对效率的要求很高时，使用全局变量来避免传递参数是提高执行速度的一种重要方法。</p>
+</blockquote>
+<p><strong>参数</strong><br>非方法的子程序有两种途径访问他们要处理的数据. 第一种是直接访问非本地变量,第二种是参数传递.参数传递较直接访问本地变量更加灵活.</p>
+<p><strong>参数传递</strong><br>按值传递:<br>按值传递参数时,实参的值用来初始化对应的形参,然后这个实参就用作子程序中的局部变量,来实现输入语义.按值传递的缺点在于在被调用子程序内部必须为形参分配额外的存储空间.此外如果参数太大,存储空间和拷贝操作的开销会很大.<br>按引用传递:<br>引用传递通过访问路径获取数据的地址,并传递给被调用的子程序.引用传递传递效率较高,但对形参的访问比按值传递慢,因为引用要求额外的间接寻址操作. 如果仅需要数值单向传递给被调用的子程序,实参就可能出现无意的,错误的改动; 另一个不足之处是可以创建别名.</p>
+<blockquote>
+<p>Python中的参数传递方式是按赋值传递,因为所有的数据值都是对象,每个变量都是对对象的引用。在赋值传递中,实参的值赋给形参.因此,按赋值传递实际上是按引用传递，因为所有的实参值都是引用。但是，只有当对象是不可变类型时赋值传递会产生值传递语义。(纯面向对象语言)</p>
+</blockquote>
+<p>Python中不带圆括号的函数名就是函数的指针。函数和数据一样可以赋值给变量.因此,不需要指向子程序的指针。</p>
+<p><strong>局部变量</strong><br>在子程序中定义的变量称为局部变量,因为他们的作用域通常就是所在的子程序体.</p>
+<p><strong>泛型子程序</strong><br>Python的方法提供了更一般的多态性.语言中的变量没有类型,所以形参也没有类型.因此,只要定义了方法用于形参的操作符,该方法就可以使用任意类型的实参.</p>
+<h4 id="7-2-过程"><a href="#7-2-过程" class="headerlink" title="7.2 过程"></a>7.2 过程</h4><p>Python中过程等价于函数，解释器会隐式地返回默认值None。</p>
+<blockquote>
+<p>在大多数面向对象编程的语言中, 当前对象的引用会隐式传送给每个方法调用.但是在Python中,这个引用必须显式传送,所以self是方法的第一个参数.</p>
+</blockquote>
+<p><strong>闭包</strong> </p>
+<h3 id="抽象数据类型和封装结构"><a href="#抽象数据类型和封装结构" class="headerlink" title="抽象数据类型和封装结构"></a>抽象数据类型和封装结构</h3><p>封装就是为逻辑关联的软件资源（抽象数据类型）提供的语法容器。这些封装的作用是提供一种方法，将程序组织到逻辑单元中进行编译。这就允许程序的各个部分在修改后进行独立的重编译。</p>
+<h3 id="面向对象程序设计的支持"><a href="#面向对象程序设计的支持" class="headerlink" title="面向对象程序设计的支持"></a>面向对象程序设计的支持</h3><p>面向对象语言必须支持的三个关键语言特性：</p>
+<ul>
+<li>抽象数据类型</li>
+<li>继承</li>
+<li>方法调用到对应方法的动态绑定</li>
+</ul>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p>继承可以用来解决软件复用的问题。<br>在面向对象语言中，抽象数据类型通常称为类。与抽象数据类型的实例一样，类的实列称为对象。通过对另一个类的继承来定义的类，称为派生类或子类。派生类新类的类是父类或超类。定义类对象的操作的子程序称为方法。对方法的调用通常称为消息。对象方法的完整集合称为这个对象的消息协议或消息接口。<strong>面向对象的程序中的计算，通常是通过从一个对象向另一个对象发送消息（调用方法）来说明的</strong></p>
+<h3 id="派生类与父类"><a href="#派生类与父类" class="headerlink" title="派生类与父类"></a>派生类与父类</h3><p>父类与子类的常见区别：</p>
+<ul>
+<li>父类可以定义不能被子类访问的私有变量和方法</li>
+<li>子类可以在继承父类成员的基础上再添加成员</li>
+<li>子类可以对一个或多个继承来的方法进行修改，修改后的方法与原方法有相同的名字，通常也具有与原方法相同的协议</li>
+</ul>
+<p>类可以拥有两种方法和变量。最常用的方法和变量是实例方法和实例变量。类的每个对象都拥有一套自己的实例变量，用于存储对象的状态。 </p>
+<h3 id="实例方法和实列变量（属性）"><a href="#实例方法和实列变量（属性）" class="headerlink" title="实例方法和实列变量（属性）"></a>实例方法和实列变量（属性）</h3><p>实例变量仅属于类的某个对象。类变量属于类，而不属于类的对象。因此类变量对类只有一个副本。实例方法只能用于操作类的对象。类方法可以对整个类进行操作，也可以对类的对象进行操作。</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span>:</span></span><br><span class="line"></span><br><span class="line">    kind = <span class="string">'canine'</span>         <span class="comment"># class variable shared by all instances</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        self.name = name    <span class="comment"># instance variable unique to each instance</span></span><br></pre></td></tr></table></figure>
+<h3 id="单继承与多继承"><a href="#单继承与多继承" class="headerlink" title="单继承与多继承"></a>单继承与多继承</h3><p>一个子类的父类只有一个，这个派生过程叫单继承，有多个父类则叫多继承。(Python中没有接口的概念)</p>
+<h3 id="继承的缺点："><a href="#继承的缺点：" class="headerlink" title="继承的缺点："></a>继承的缺点：</h3><p>在继承层次结构中的各个类之间形成了相互依赖。这种结果正好与抽象数据类型的优点相反。抽象数据类型的优点是类型之间是相互独立的。</p>
+<h3 id="动态绑定"><a href="#动态绑定" class="headerlink" title="动态绑定"></a>动态绑定</h3><p>动态绑定是消息到方法定义的动态绑定过程所提供的一种多态性。</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span><span class="params">()</span>:</span></span><br><span class="line">    --snip--</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Battery</span><span class="params">()</span>:</span>  <span class="comment"># 将电池对象从电动汽车类中分离出来</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, battery_size=<span class="number">70</span>)</span>:</span></span><br><span class="line">        self.battery_size = battery_size</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">describe_battery</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"This car has a "</span> + str(self.battery_size) + <span class="string">"-kWh battery."</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ElectricCar</span><span class="params">(Car)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, make, model, year)</span>:</span></span><br><span class="line">        super().__init__(make, model, year)</span><br><span class="line">        self.battery = Battery()  <span class="comment"># 实例化调用</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    my_tesla = ElectricCar(<span class="string">'tesla'</span>, <span class="string">'model s'</span>, <span class="number">2016</span>)</span><br><span class="line">    print(my_tesla.get_descriptive_name())</span><br><span class="line">    my_tesla.battery.describe_battery()</span><br></pre></td></tr></table></figure>
+<h2 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h2><p>软件执行时的并发的四个层次： 指令级（同时执行多条机器指令）、语句级（同时执行多条语句）、单元级（同时执行多个子程序）、程序级（同时执行多个程序）</p>
+<h3 id="并发的种类"><a href="#并发的种类" class="headerlink" title="并发的种类"></a>并发的种类</h3><p>物理并发：<br>多个处理器同时运行一个程序的几个程序单元。</p>
+<p>逻辑并发：<br>单个处理器以分时方式实现并发。</p>
+<blockquote>
+<p>Python程序时解释性的，所以他们只有逻辑并发。即使有多个处理器，有不能使用多处理器。</p>
+</blockquote>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>Python类中的self代表的是类的实例本身​.</p>
+<p>self是按惯例的写法, 也可以写成 this, that…</p>
+<p>class Test:<br>    def prt(self):  # 如果去掉slef TypeError: pr() takes 0 positional arguments but 1 was given<br>        print(self)<br>​<br>t = Test()<br>t.prt()</p>
+<h1 id="在解释器内部，调用t-prt-实际上会解释成Test-prt-t-，也就是说把self替换成类的实例。"><a href="#在解释器内部，调用t-prt-实际上会解释成Test-prt-t-，也就是说把self替换成类的实例。" class="headerlink" title="在解释器内部，调用t.prt()实际上会解释成Test.prt(t)，也就是说把self替换成类的实例。"></a>在解释器内部，调用t.prt()实际上会解释成Test.prt(t)，也就是说把self替换成类的实例。</h1><p>Python 类方法 实例方法 静态方法’</p>
+<p>Python 描述符</p>
+<p>Python性能测试</p>
+<p>Last updated 3 months ago<br>常用方式:<br>1.PyCharm图形化性能测试工具：<br>PyCharm提供了图像化的性能分析工具，使用方法见利用PyCharm的Profile工具进行Python性能分析。</p>
+<p>2.memory_profiler:<br>memory_profiler工具可以统计每行代码占用的内存大小。  </p>
+<p>安装：<br>pip install memory_profiler  </p>
+<p>pip install psutil  </p>
+<p>3.objgraph：<br>objgraph是一个实用模块,可以列出当前内存中存在的对象，可用于定位内存泄露。</p>
+<p>objgraph需要安装：</p>
+<p>pip install objgraph</p>
+<p>Python高性能</p>
+<p>Last updated 3 months ago<br>加法运算<br>a = a + b  # 这个语句主要是阶层式相加，效率比较低。<br>​<br>a += b  # 这个语句主要是循环式相加，速度快，还有强制转换类型的功能。<br>字符串替换<br>import re<br>​<br>def slowest_replace(orignal_str):<br>    replace_list = []<br>    for i, char in enumerate(orignal_str):<br>        c = char if char != “ “ else “-“<br>        replace_list.append(c)<br>    return “”.join(replace_list)  # 92ms<br>​<br>def slow_replace(orignal_str):<br>    replace_str = “”<br>    for i, char in enumerate(orignal_str):<br>        c = char if char != “ “ else “-“<br>        replace_str += c<br>    return replace_str  # 43ms<br>​<br>def re_replace(orignal_str):<br>    n = re.sub(‘ ‘, ‘-‘, orignal_str)<br>    return n  # 35ms<br>​<br>def compiled_replace(orignal_str):<br>    pattern = re.compile(“ “)<br>    return pattern.sub(‘-‘, orignal_str)  # 29ms<br>​<br>def fast_replace(orignal_str):<br>    return “-“.join(orignal_str.split())  # 14ms<br>​<br>def fastest_replace(orignal_str):<br>    return orignal_str.replace(“ “, “-“)  # 5ms<br>​<br>​<br>if <strong>name</strong> == “<strong>main</strong>“:<br>    orignal_str = “ a b c d e f g h i j k l m n o p q r s t”<br>    for i in range(10000):<br>        re_replace(orignal_str)<br>        compiled_replace(orignal_str)<br>        slowest_replace(orignal_str)<br>        slow_replace(orignal_str)<br>        fast_replace(orignal_str)<br>        fastest_replace(orignal_str)<br>​<br>结论: 字符串替换效率, replace方法最佳, 正则表达式先编译可以提升效率.</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">Etiqueta</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-编码规范"><span class="toc-number">1.</span> <span class="toc-text">1. 编码规范</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-执行方式"><span class="toc-number">2.</span> <span class="toc-text">2. 执行方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-变量"><span class="toc-number">3.</span> <span class="toc-text">3. 变量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-标识符（变量名）"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 标识符（变量名）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-地址"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 地址</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-类型"><span class="toc-number">3.3.</span> <span class="toc-text">3.3 类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-值"><span class="toc-number">3.4.</span> <span class="toc-text">3.4 值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-生存期"><span class="toc-number">3.5.</span> <span class="toc-text">3.5 生存期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-6-作用域"><span class="toc-number">3.6.</span> <span class="toc-text">3.6 作用域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-7-常量"><span class="toc-number">3.7.</span> <span class="toc-text">3.7 常量</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-数据类型"><span class="toc-number">4.</span> <span class="toc-text">4. 数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-基本数据类型"><span class="toc-number">4.1.</span> <span class="toc-text">4.1 基本数据类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-字符串"><span class="toc-number">4.2.</span> <span class="toc-text">4.2 字符串</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-数组类型"><span class="toc-number">4.3.</span> <span class="toc-text">4.3 数组类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-4-关联数组"><span class="toc-number">4.4.</span> <span class="toc-text">4.4 关联数组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-记录类型"><span class="toc-number">4.5.</span> <span class="toc-text">4.5 记录类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-6-元组类型"><span class="toc-number">4.6.</span> <span class="toc-text">4.6 元组类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-7-列表类型"><span class="toc-number">4.7.</span> <span class="toc-text">4.7 列表类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-8-指针和引用类型"><span class="toc-number">4.8.</span> <span class="toc-text">4.8 指针和引用类型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-表达式与赋值语句"><span class="toc-number">5.</span> <span class="toc-text">5. 表达式与赋值语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-语句级控制结构"><span class="toc-number">6.</span> <span class="toc-text">6. 语句级控制结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-1-条件语句"><span class="toc-number">6.1.</span> <span class="toc-text">6.1 条件语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-循环语句"><span class="toc-number">6.2.</span> <span class="toc-text">6.2 循环语句</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-子程序"><span class="toc-number">7.</span> <span class="toc-text">7. 子程序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1-函数"><span class="toc-number">7.1.</span> <span class="toc-text">7.1 函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-过程"><span class="toc-number">7.2.</span> <span class="toc-text">7.2 过程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#抽象数据类型和封装结构"><span class="toc-number">8.</span> <span class="toc-text">抽象数据类型和封装结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#面向对象程序设计的支持"><span class="toc-number">9.</span> <span class="toc-text">面向对象程序设计的支持</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#继承"><span class="toc-number"></span> <span class="toc-text">继承</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#派生类与父类"><span class="toc-number">1.</span> <span class="toc-text">派生类与父类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实例方法和实列变量（属性）"><span class="toc-number">2.</span> <span class="toc-text">实例方法和实列变量（属性）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#单继承与多继承"><span class="toc-number">3.</span> <span class="toc-text">单继承与多继承</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#继承的缺点："><span class="toc-number">4.</span> <span class="toc-text">继承的缺点：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#动态绑定"><span class="toc-number">5.</span> <span class="toc-text">动态绑定</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#并发"><span class="toc-number"></span> <span class="toc-text">并发</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#并发的种类"><span class="toc-number">1.</span> <span class="toc-text">并发的种类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试"><span class="toc-number"></span> <span class="toc-text">测试</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#在解释器内部，调用t-prt-实际上会解释成Test-prt-t-，也就是说把self替换成类的实例。"><span class="toc-number"></span> <span class="toc-text">在解释器内部，调用t.prt()实际上会解释成Test.prt(t)，也就是说把self替换成类的实例。</span></a>
+    </li></div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://bianwangui.github.io/2016/05/06/2016/Python 学习笔记/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://bianwangui.github.io/2016/05/06/2016/Python 学习笔记/&text=Python 学习笔记"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://bianwangui.github.io/2016/05/06/2016/Python 学习笔记/&title=Python 学习笔记"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://bianwangui.github.io/2016/05/06/2016/Python 学习笔记/&is_video=false&description=Python 学习笔记"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Python 学习笔记&body=Check out this article: https://bianwangui.github.io/2016/05/06/2016/Python 学习笔记/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://bianwangui.github.io/2016/05/06/2016/Python 学习笔记/&title=Python 学习笔记"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://bianwangui.github.io/2016/05/06/2016/Python 学习笔记/&title=Python 学习笔记"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://bianwangui.github.io/2016/05/06/2016/Python 学习笔记/&title=Python 学习笔记"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://bianwangui.github.io/2016/05/06/2016/Python 学习笔记/&title=Python 学习笔记"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://bianwangui.github.io/2016/05/06/2016/Python 学习笔记/&name=Python 学习笔记&description=&lt;blockquote&gt;
+&lt;p&gt;Python 实践过程中的一些思考&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;从编程语言具体实现，理解 &lt;strong&gt;变量&lt;/strong&gt;、&lt;strong&gt;数据类型&lt;/strong&gt;、&lt;strong&gt;表达式&lt;/strong&gt;、&lt;strong&gt;语句&lt;/strong&gt;、&lt;strong&gt;子程序&lt;/strong&gt;等概念。&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://bianwangui.github.io/2016/05/06/2016/Python 学习笔记/&t=Python 学习笔记"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2020
+    万 少 侠
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">Etiqueta</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<!-- clipboard -->
+
+  <script src="/lib/clipboard/clipboard.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
